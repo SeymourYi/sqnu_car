@@ -14,8 +14,10 @@ public interface CategoryMapper {
             "values (#{categoryName},#{categoryAlias},#{createUser},#{createTime},#{updateTime})")
         //新增
     void add(Category category);
-    @Select("select * from category where create_user = #{userId}")
-    List<Category> list(Integer userId);
+//    @Select("select * from category where create_user = #{userId}")
+    @Select("select * from category")
+
+    List<Category> list();
 @Select("select * from category where id = #{id}")
     Category findById(Integer id);
 @Update("update category set category_name = #{categoryName},category_alias=#{categoryAlias},update_time=#{updateTime} where id = #{id}")

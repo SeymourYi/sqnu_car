@@ -16,13 +16,13 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry){
          registry.addInterceptor(loginInterception).excludePathPatterns("/user/register","/user/login","/student/search","/student/getall");
      }
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowCredentials(true)
-                .allowedOrigins("http://localhost:5173")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowedHeaders("*")
-                .exposedHeaders("*");
-    }
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry) {
+//        registry.addMapping("/**")
+//                .allowCredentials(true)
+//                .allowedOrigins("http://localhost:5173")
+//                .allowedMethods("GET", "POST", "PUT", "DELETE")
+//                .allowedHeaders("*")
+//                .exposedHeaders("*");
+//    }
 }

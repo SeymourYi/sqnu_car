@@ -50,8 +50,9 @@ public class UserController {
      }
      @PostMapping("/login")
      public Result login(@Pattern(regexp = "^\\S{5,16}$") String username,@Pattern(regexp = "^\\S{5,16}$") String password){
+         System.out.println("123"+username);
          User loginuser = userSvice.findByUserName(username);
-
+         System.out.println(loginuser);
          if (loginuser == null){
              // 无法登录
              return Result.error("账号错误");
@@ -106,7 +107,7 @@ public class UserController {
           return Result.error("缺少必要的参数");
          }
          Map<String,Object> map = ThreadLocalUtil.get();
-        System.out.println(map);                      //检查点
+         System.out.println(map);                      //检查点
 
          String username = (String) map.get("username");
          System.out.println(username);                      //检查点

@@ -20,6 +20,7 @@ public class CategoryController {
     }
     @GetMapping
     public Result<List<Category>> list(){
+        System.out.println("123");
       List<Category> cs = categoryService.list();
       return Result.success(cs);
     }

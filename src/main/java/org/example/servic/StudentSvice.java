@@ -9,4 +9,8 @@ public interface StudentSvice {
     Student findByStudentName(String studentname);
 
     List<Student> getAll();
+
+    void add(Student u);
+
+    void updataPwd(String oldPwd, String newPwd);
 }
