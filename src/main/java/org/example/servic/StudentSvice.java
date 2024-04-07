@@ -13,4 +13,10 @@ public interface StudentSvice {
     void add(Student u);
 
     void updataPwd(String oldPwd, String newPwd);
+
+    void prove(Integer params);
+
+    void Delet(Integer id);
+
+    void addExcel(List<Student> u);
 }

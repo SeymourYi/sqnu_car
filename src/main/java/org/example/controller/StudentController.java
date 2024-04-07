@@ -51,6 +51,12 @@ public class StudentController {
         studentSvice.add(u);
         return Result.success();
     }
+    @PostMapping("/addExcel")
+    public Result addExcel(@RequestBody List<Student> u){
+
+        studentSvice.addExcel(u);
+        return Result.success();
+    }
 
 
 
@@ -60,6 +66,18 @@ public class StudentController {
         String newPwd = params.get("new_Pwd");
 
         studentSvice.updataPwd(oldPwd,newPwd);
+        return Result.success();
+    }
+    @PostMapping("/prove")
+    public Result prove(@RequestBody Map<String,Integer> params){
+        Integer id = params.get("studentid");
+        studentSvice.prove(id);
+        return Result.success();
+    }
+    @PostMapping("/Delet")
+    public Result Delet(@RequestBody Map<String,Integer> params){
+        Integer id = params.get("studentid");
+        studentSvice.Delet(id);
         return Result.success();
     }
 

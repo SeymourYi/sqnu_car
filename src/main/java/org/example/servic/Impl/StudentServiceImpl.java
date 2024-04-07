@@ -39,4 +39,23 @@ public class StudentServiceImpl implements StudentSvice {
         newPwd = Md5Util.getMD5String(newPwd);
         studentMapper.updataPwd(oldPwd,newPwd);
     }
+
+    @Override
+    public void prove(Integer params) {
+         studentMapper.prove(params);
+    }
+
+    @Override
+    public void Delet(Integer id) {
+        studentMapper.Delet(id);
+    }
+
+    @Override
+    public void addExcel(List<Student> u) {
+        for (int i = 0; i < u.size(); i++) {
+//           Object  a=u.get(i);
+           studentMapper.add(u.get(i));
+//            System.out.println(u.get(i).name);
+        }
+    }
 }
