@@ -54,7 +54,7 @@ public class StudentServiceImpl implements StudentSvice {
     public void addExcel(List<Student> u) {
         for (int i = 0; i < u.size(); i++) {
 //           Object  a=u.get(i);
-           studentMapper.add(u.get(i));
+           studentMapper.addExcel(u.get(i));
 //            System.out.println(u.get(i).name);
         }
     }
